@@ -26,8 +26,8 @@ const Panel: React.FC<{x: number; heads: number; each: number; total: string; ac
       <Rule left={0} top={92} width={560} color="rgba(244,241,234,0.14)" />
       <div style={{marginTop: 40, display: 'flex', flexDirection: 'column', gap: 24}}>
         {Array.from({length: heads}).map((_, i) => {
-          const s = spring({frame: (local - 0.3 - index * 0.14 - i * 0.07) * fps, fps, config: {damping: 25, mass: 0.6, stiffness: 170}});
-          const w = mix(70, secToPx(each) * 0.9 + 14, clamp(morph, 0, 1));
+          const s = spring({frame: (local - 0.05 - index * 0.09 - i * 0.05) * fps, fps, config: {damping: 24, mass: 0.55, stiffness: 220}});
+          const w = mix(112, secToPx(each) * 0.9 + 14, clamp(morph, 0, 1));
           return (
             <div key={i} style={{display: 'flex', alignItems: 'center', gap: 14, opacity: clamp(s * 1.4, 0, 1)}}>
               <div style={{width: Math.max(16, w * s), height: morph > 0.5 ? 78 : 96, borderRadius: 10,

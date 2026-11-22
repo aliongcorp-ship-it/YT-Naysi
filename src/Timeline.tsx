@@ -33,7 +33,9 @@ export const Naysi: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
-  const actIndex = Math.max(0, tl.acts.findIndex((a) => t >= a.start && t < a.end));
+  const hit = tl.acts.findIndex((a) => t >= a.start && t < a.end);
+  // after the last act ends we keep holding its final frame through the tail
+  const actIndex = hit === -1 ? tl.acts.length - 1 : hit;
   const Current = ACTS[Math.min(actIndex, ACTS.length - 1)];
   const act = tl.acts[Math.min(actIndex, tl.acts.length - 1)];
   const fadeIn = interpolate(t, [0, 0.5], [0, 1], {extrapolateRight: 'clamp'});

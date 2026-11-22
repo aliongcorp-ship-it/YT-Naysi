@@ -21,10 +21,10 @@ export const Act2: React.FC<{act: Act}> = ({act}) => {
   const pct = data.px.otherFirstPct;
   const count = pct * easeQ(t, 1.15, 2.2);
   const landed = clamp((t - 3.35) / 0.35, 0, 1);
-  const dim = 1 - 0.75 * clamp((t - 9.25) / 0.5, 0, 1);
+  const dim = 1 - clamp((t - 9.25) / 0.5, 0, 1);
   const gridOut = 1 - clamp((t - 9.3) / 0.6, 0, 1);
   const memory = clamp((t - 10.9) / 0.9, 0, 1);
-  const tilesIn = clamp((t - 6.9) / 0.4, 0, 1) * (1 - memory);
+  const tilesIn = clamp((t - 6.9) / 0.4, 0, 1) * (1 - clamp((t - 10.4) / 0.4, 0, 1));
   const tileStagger = (i: number) => clamp((t - 6.92 - i * 0.09) / 0.35, 0, 1);
 
   return (
@@ -74,7 +74,7 @@ export const Act2: React.FC<{act: Act}> = ({act}) => {
         })}
       </div>
 
-      <div style={{position: 'absolute', left: 96, top: 1400, opacity: memory, transform: `translateY(${(1 - memory) * 30}px)`}}>
+      <div style={{position: 'absolute', left: 96, top: 1092, opacity: memory, transform: `translateY(${(1 - memory) * 30}px)`}}>
         <div style={{fontFamily: F.mono, fontSize: 24, letterSpacing: '0.3em', color: C.steel}}>YANG TINGGAL DI KEPALA</div>
         <div style={{fontFamily: F.display, fontWeight: 800, fontSize: 96, color: C.ink, letterSpacing: '-0.03em', marginTop: 14, lineHeight: 0.98}}>
           HANYA YANG <span style={{fontFamily: F.serif, fontStyle: 'italic', fontWeight: 400, color: C.coral, fontSize: 116}}>merah</span>

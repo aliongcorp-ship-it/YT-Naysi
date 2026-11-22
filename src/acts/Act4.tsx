@@ -73,7 +73,7 @@ export const Act4: React.FC<{act: Act}> = ({act}) => {
 
       <div style={{position: 'absolute', left: 96, top: 1450, opacity: final, transform: `translateY(${(1 - final) * 36}px)`}}>
         <div style={{fontFamily: F.display, fontWeight: 800, fontSize: 82, color: C.ink, letterSpacing: '-0.035em', lineHeight: 1.04, textTransform: 'uppercase'}}>
-          Satu kali kalah,<br /><span style={{fontFamily: F.serif, fontStyle: 'italic', fontWeight: 400, color: C.coral, fontSize: 96, textTransform: 'none'}}>itu</span> yang kamu bawa.
+          Satu kali kalah,<br /><span style={{fontFamily: F.serif, fontStyle: 'italic', fontWeight: 400, color: C.coral, fontSize: 84, textTransform: 'none', marginRight: 6}}>itu</span>yang kamu bawa.
         </div>
       </div>
       <Caption act={act} t={act.start + t} />

@@ -54,7 +54,7 @@ export const Act6: React.FC<{act: Act}> = ({act}) => {
         <div style={{position: 'absolute', left: 0, top: 150, fontFamily: F.mono, fontSize: 22, letterSpacing: '0.22em', color: C.steel, lineHeight: 1.4}}>DETIK YANG SUDAH DIBAYAR</div>
       </div>
       {jump > 0 ? (
-        <div style={{position: 'absolute', left: 470, top: 972, fontFamily: F.mono, fontWeight: 700, fontSize: 84, color: C.coral, opacity: jump * (1 - clamp((t - 7.6) / 0.5, 0, 1)), transform: `translateY(${-30 * jump}px)`}}>+73 s</div>
+        <div style={{position: 'absolute', left: 462, top: 1030, fontFamily: F.mono, fontWeight: 700, fontSize: 72, color: C.coral, opacity: jump * (1 - clamp((t - 7.6) / 0.5, 0, 1)), transform: `translateY(${-30 * jump}px)`}}>+73 s</div>
       ) : null}
 
       <div style={{position: 'absolute', left: 96, top: 1190, width: 1248, height: 300, borderBottom: `2px solid rgba(244,241,234,0.16)`}}>
