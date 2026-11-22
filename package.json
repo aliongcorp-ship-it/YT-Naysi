@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "setup-browser": "node scripts/setup-browser.mjs",
     "sim": "node scripts/simulate.mjs",
     "timeline": "node scripts/build-timeline.mjs",
     "score": "python3 scripts/score.py",
